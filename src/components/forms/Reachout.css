@@ -1,0 +1,193 @@
+:root {
+  --neon-accent: #0f0; /* Electric Neon Green */
+  --bg-dark: #000a08;
+  --bg-panel: #031411;
+  --text-primary: #e0f2f1;
+  --text-muted: #546e7a;
+}
+
+.reach-viewport {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace; /* Monospace for tech feel */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🌀 Background Tech Grid */
+.tech-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: 
+    linear-gradient(rgba(15, 255, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 255, 0, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: bgPulse 6s infinite alternate ease-in-out;
+}
+
+/* 🛡 Panel Wrapper */
+.reach-wrapper {
+  width: 90%;
+  max-width: 420px;
+  position: relative;
+  z-index: 5;
+  animation: glitchEntrance 0.7s ease-out;
+}
+
+.reach-panel {
+  background: var(--bg-panel);
+  padding: 50px;
+  border-radius: 0; /* Minimalist sharp edges */
+  border: 1px solid rgba(15, 255, 0, 0.1);
+  box-shadow: 0 0 40px rgba(0,0,0,0.8), 0 0 10px rgba(15, 255, 0, 0.05);
+  position: relative;
+}
+
+.back-link {
+  font-size: 11px;
+  color: var(--neon-accent);
+  cursor: pointer;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.back-link:hover {
+  text-shadow: 0 0 5px var(--neon-accent);
+}
+
+.header-zone h2 {
+  font-size: 32px;
+  color: var(--text-primary);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.header-zone p.subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 10px 0 35px;
+  font-weight: bold;
+}
+
+/* 🖋 "Matrix" Data Fields */
+.data-field {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.data-field input {
+  width: 100%;
+  padding: 12px 10px;
+  border: 1px solid rgba(15, 255, 0, 0.1);
+  background: rgba(0,0,0,0.3);
+  color: var(--neon-accent);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.data-field input:focus {
+  outline: none;
+  background: rgba(15, 255, 0, 0.03);
+  border-color: rgba(15, 255, 0, 0.3);
+}
+
+/* 💫 Dynamic Line Effect */
+.focus-line {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--neon-accent);
+  transition: width 0.4s ease;
+}
+
+.data-field input:focus + .focus-line {
+  width: 100%;
+}
+
+/* 🚀 Neon Button */
+.neon-btn {
+  width: 100%;
+  padding: 16px;
+  background: transparent;
+  color: var(--neon-accent);
+  border: 1px solid var(--neon-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.neon-btn:hover {
+  background: rgba(15, 255, 0, 0.05);
+  box-shadow: 0 0 20px rgba(15, 255, 0, 0.3);
+  text-shadow: 0 0 5px var(--neon-accent);
+}
+
+.neon-btn:disabled {
+  border-color: #555;
+  color: #555;
+  background: transparent;
+}
+
+/* 📢 Console Messages */
+.console-msg {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 13px;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.console-msg.success { color: #81c784; background: rgba(129, 199, 132, 0.05); border: 1px solid rgba(129, 199, 132, 0.2); }
+.console-msg.error { color: #e57373; background: rgba(229, 115, 115, 0.05); border: 1px solid rgba(229, 115, 115, 0.2); }
+
+/* 🎬 Animations */
+
+@keyframes bgPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes glitchEntrance {
+  0% { opacity: 0; transform: scale(1.1); filter: contrast(1.5); }
+  80% { opacity: 1; transform: scale(0.99); filter: contrast(1); }
+  100% { transform: scale(1); }
+}
+
+/* 🌀 Dot Pulse Loader */
+.dot-pulse {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: var(--neon-accent);
+  color: var(--neon-accent);
+  animation: dotPulse 1s infinite linear;
+  margin: 0 auto;
+}
+
+.dot-pulse::before, .dot-pulse::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0; width: 8px; height: 8px; border-radius: 5px; background-color: var(--neon-accent); color: var(--neon-accent);
+}
+
+.dot-pulse::before { left: -12px; animation: dotPulseBefore 1s infinite linear; }
+.dot-pulse::after { left: 12px; animation: dotPulseAfter 1s infinite linear; }
+
+@keyframes dotPulseBefore { 0% { opacity: 1; } 50%, 100% { opacity: 0.1; } }
+@keyframes dotPulse { 0%, 50% { opacity: 1; } 100% { opacity: 0.1; } }
+@keyframes dotPulseAfter { 0%, 50%, 100% { opacity: 1; } 0%, 50% { opacity: 0.1; } }
+
+@media (max-width: 480px) {
+  .reach-panel { padding: 30px; }
+}

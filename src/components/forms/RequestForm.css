@@ -1,0 +1,296 @@
+:root {
+  --bg-gradient: linear-gradient(-45deg, #e6fffa, #e1f5fe, #f0fff4, #ffffff);
+  --med-primary: #8b5cf6;
+  --med-secondary: #7c3aed;
+  --dark-header: #1f2937;
+  --input-bg: #f3f4f6;
+  --med-text: #374151;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 🌿 Background */
+.wrapper {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-gradient);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+
+  position: relative;
+  overflow: hidden; /* ✅ prevents movement */
+}
+
+/* 🌈 Floating Blobs (Stable) */
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: rgba(139, 92, 246, 0.12);
+  border-radius: 50%;
+  z-index: 0;
+  animation: float 10s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.wrapper::before {
+  top: -120px;
+  left: -120px;
+}
+
+.wrapper::after {
+  bottom: -120px;
+  right: -120px;
+  animation-delay: 3s;
+}
+
+/* 🧾 Form Card */
+.form {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  animation: entrance 0.6s ease;
+
+  position: relative;
+  z-index: 2;
+  transition: box-shadow 0.3s ease;
+}
+
+/* ✅ No movement, only shadow */
+.form:hover {
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* 🔝 Header */
+.form-header {
+  height: 60px;
+  background: var(--dark-header);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  color: rgba(255,255,255,0.6);
+  font-size: 18px;
+}
+
+/* 📝 Title */
+.form h2 {
+  padding: 20px 30px 10px;
+  margin: 0;
+  text-align: center;
+  color: var(--med-text);
+}
+
+/* 📥 Inputs */
+.input-group {
+  padding: 0 30px;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #4b5563;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--input-bg);
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  background: #e5e7eb;
+  box-shadow: 0 0 0 3px rgba(139,92,246,0.2);
+}
+
+/* 🚀 Button */
+.button {
+  width: calc(100% - 60px);
+  margin: 20px 30px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--med-primary);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:hover {
+  background: var(--med-secondary);
+}
+
+/* 💫 Button Shine Effect */
+.button::after {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: rgba(255,255,255,0.2);
+  top: 100%;
+  left: -100%;
+  transform: rotate(45deg);
+  transition: 0.6s;
+}
+
+.button:hover::after {
+  top: -50%;
+  left: -50%;
+}
+
+.button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* 📢 Message */
+.message {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.message.success {
+  color: green;
+  animation: successPop 0.4s ease;
+}
+
+.message.error {
+  color: red;
+  animation: shake 0.4s ease;
+}
+
+/* 🎬 Animations */
+
+@keyframes gradientShift {
+  0% { background-position: 0% }
+  50% { background-position: 100% }
+  100% { background-position: 0% }
+}
+
+@keyframes entrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(25px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes successPop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+
+/* 📱 Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .form {
+    max-width: 90%;
+    border-radius: 15px;
+  }
+
+  .form h2 {
+    font-size: 18px;
+    padding: 15px 20px;
+  }
+
+  .input-group {
+    padding: 0 20px;
+  }
+
+  .input-group input {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .button {
+    width: calc(100% - 40px);
+    margin: 15px 20px;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .form-header {
+    height: 50px;
+  }
+
+  .close {
+    top: 12px;
+    font-size: 16px;
+  }
+}
+
+/* 📱 Tablet (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .form {
+    max-width: 80%;
+  }
+
+  .form h2 {
+    font-size: 20px;
+  }
+
+  .input-group input {
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: 15px;
+  }
+}
+
+/* 💻 Laptop (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .form {
+    max-width: 420px;
+  }
+}
+
+/* 🖥 Desktop (1025px and above) */
+@media (min-width: 1025px) {
+  .form {
+    max-width: 400px;
+  }
+}

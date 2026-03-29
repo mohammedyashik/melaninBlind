@@ -1,0 +1,218 @@
+/* ===== ROOT ===== */
+:root {
+  --navy: #071a26;
+  --teal: #3ecfbe;
+  --text: #cbd5e1;
+  --nav-height: 75px;
+  --transition: all 0.35s ease;
+}
+.logo-text span{
+  font-size: 18px;
+}
+/* ===== GLOBAL ===== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Gill Sans', Calibri, sans-serif;
+  background: #020d1a;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER WRAPPER ===== */
+.header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-wrapper.scrolled .navbar {
+  background: rgba(2, 13, 26, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+
+.nav-apply {
+  /* A slightly more modern gradient using your teal palette */
+  background: linear-gradient(135deg, #1f7a7a, #3ecfbe);
+  text-align: center;
+  color: #ffffff;
+  padding: 20px 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-apply p {
+  margin: 0;
+  font-size: 14px; /* Prevents unwanted spacing in the nav bar */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Target the Link/Anchor specifically */
+.apply-link {
+  text-decoration: none; /* Remove default link underline */
+  margin-left: px;
+  transition: all 0.3s ease;
+
+}
+
+.apply-text {
+  text-decoration: underline;
+  font-weight: 700;
+  margin-left: 5px;
+  color: #ffffff; /* Start white to match the rest of the text */
+  transition: color 0.3s ease;
+}
+
+/* Hover effect on the entire link area */
+.apply-text:hover  {
+  color: #00000054; /* Turns black on hover */
+  text-decoration: none;
+  cursor: pointer; /* Optional: remove underline on hover for a "pop" effect */
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  background: rgba(7, 26, 38, 0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ===== CONTAINER ===== */
+.nav-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== LOGO ===== */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.nav-logo img {
+  width: 30px;
+}
+
+.logo-text {
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.logo-text span {
+  color: var(--teal);
+}
+
+/* ===== LINKS ===== */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links li {
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.nav-links li:hover {
+  color: var(--teal);
+}
+
+/* ===== CTA BUTTON ===== */
+.cta-btn {
+  background: linear-gradient(135deg, #1f7a7a, #3ecfbe);
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+/* ACTIVE */
+/* Top bar rotates down */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+/* Middle bar disappears */
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-9px); /* Optional: slides out to the left */
+}
+
+/* Bottom bar rotates up */
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+.hamburger span {
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  display: block;
+  /* Use the transition variable you created earlier */
+  transition: var(--transition); 
+}
+/* ===== MOBILE ===== */
+@media (max-width: 850px) {
+
+  .hamburger {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #091f2e;
+    padding: 20px 0;
+
+    transform: translateY(-120%);
+    opacity: 0;
+    transition: var(--transition);
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+}
