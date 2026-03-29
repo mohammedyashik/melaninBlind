@@ -55,7 +55,7 @@ import melaninLogo from "../../assets/melanin.png";
   </div>
 
       <footer className="footer">
-        <div className="footer-item"><span>✉</span> mohammedyashik.b@gmail.com</div>
+        <div className="footer-item"><span>✉</span> mohammedyashik.b@melaninblind.com</div>
         <div className="footer-item"><span>📞</span> +91 9566857390</div>
         <div className="footer-item"><span>🌐</span> linkedin.com/in/mohammed-yashik/</div>
         <div className="footer-item"><span>📍</span> Chennai, India</div>
