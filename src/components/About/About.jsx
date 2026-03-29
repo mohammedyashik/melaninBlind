@@ -30,7 +30,7 @@ const About = () => {
           <div className="founder-sidebar">
             <div className="image-frame">
               <div className="frame-label">Homework Faster"</div>
-              <div className="frame-sub">MOHAMMED YASHIK. FOUNDER OF UPEL LEARNING</div>
+              <div className="frame-sub">Mohammed Yashik. Founder Of melaninBlind</div>
               <img 
                 src={image} 
                 alt="Mohammed Yashik B" 
