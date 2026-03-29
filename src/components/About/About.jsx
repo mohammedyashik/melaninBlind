@@ -2,7 +2,7 @@ import React from 'react';
 import { Check } from 'lucide-react';
 import "./About.css";
 // Corrected import: Images are default exports, do not use { }
-import image from "../../assets/yashik.png"; 
+import image from "../../assets/DSC04786.JPG"; 
 
 const About = () => {
   const credentials = [
@@ -59,7 +59,7 @@ const About = () => {
 
             <div className="contact-footer">
               <div className="contact-col">
-                <a href="mailto:mohammedyashik.b@gmail.com">mohammedyashik.b@gmail.com</a>
+                <a href="mailto:mohammedyashik.b@gmail.com">mohammedyashik.b@melaninblind.com</a>
                 <p>+91 9566857390</p>
               </div>
               <div className="contact-col">
