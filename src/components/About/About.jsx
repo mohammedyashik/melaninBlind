@@ -29,7 +29,7 @@ const About = () => {
           {/* Sidebar with Image */}
           <div className="founder-sidebar">
             <div className="image-frame">
-              <div className="frame-label">Mohammed Yashik"</div>
+              <div className="frame-label">Mohammed Yashik Sahib</div>
               <div className="frame-sub">Biomedical Engineer. Founder Of melaninBlind</div>
               <img 
                 src={image} 
