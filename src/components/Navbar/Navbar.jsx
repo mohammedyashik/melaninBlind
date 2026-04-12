@@ -31,7 +31,7 @@ const Navbar = () => {
         <p>
           Now accepting clinical pilot partners in India 
             <span className="apply-text" onClick={() => handleScrollTo("partner")} >
-              Apply for Pre-Incubation at HTIC IIT Madras →
+              Apply for Clinical Trail Partner Program →
             </span>
         </p>
       </div>
