@@ -98,7 +98,7 @@ const Clinicalpilot = () => {
         {/* Footer Credits */}
         <footer className="clinical-footer">
           <p>
-            Currently incubating at <b>HTIC IIT Madras</b> • Backed by <b>BIRAC and DST</b> • Targeting CDSCO Class B clearance Q1 2027
+            Currently seeking <b> Clinical Partnerships </b> • Supported by <b> Industry Experts </b> • Targeting CDSCO Class B clearance Q1 2027
           </p>
         </footer>
       </div>
