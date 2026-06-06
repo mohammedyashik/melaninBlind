@@ -6,7 +6,6 @@ import image from "../../assets/DSC04786.JPG";
 
 const About = () => {
   const credentials = [
-    { text: "Rs. 20L+ ($24,000+) in government grants — BIRAC, DST, IIMB, IIM Calcutta, AIC-CCMB, C-CAMP" },
     { text: "National Winner — IICDC 2019 (Texas Instruments & DST, IIM Bangalore)" },
     { text: "6+ incubations at India's leading medtech and innovation institutions" },
     { text: "Non-invasive skin cancer diagnostic built to prototype — twice, 3 design iterations" },
@@ -60,7 +59,6 @@ const About = () => {
             <div className="contact-footer">
               <div className="contact-col">
                 <a href="mailto:mohammedyashik.b@gmail.com">mohammedyashik.b@melaninblind.com</a>
-                <p>+91 9566857390</p>
               </div>
               <div className="contact-col">
                 <a href="https://linkedin.com/in/mohammed-yashik/">linkedin.com/in/mohammed-yashik/</a>
