@@ -11,8 +11,6 @@ import Partner from "../partner/Partner";
 
 const Home = () => {
   const partners = [
-    { title: 'BIRAC', subtitle: 'Govt of India' },
-    { title: 'DST', subtitle: 'Dept of Science & Technology' },
     { title: 'IIM Bangalore', subtitle: 'IICDC 2019 National Winner' },
     { title: 'IIM Calcutta', subtitle: 'Incubation Programme' },
     { title: 'AIC-CCMB', subtitle: 'Incubation · Hyderabad' },
