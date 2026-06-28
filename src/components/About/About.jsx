@@ -1,78 +1,60 @@
-import React from 'react';
-import { Check } from 'lucide-react';
+import React from "react";
 import "./About.css";
-// Corrected import: Images are default exports, do not use { }
-import image from "../../assets/DSC04786.JPG"; 
+
+import yashikImg from "../../assets/yashik.png";
+import anushaImg from "../../assets/anusha.jpg.jpeg";
 
 const About = () => {
-  const credentials = [
-    { text: "National Winner — IICDC 2019 (Texas Instruments & DST, IIM Bangalore)" },
-    { text: "6+ incubations at India's leading medtech and innovation institutions" },
-    { text: "Non-invasive skin cancer diagnostic built to prototype — twice, 3 design iterations" },
-    { text: "International — La Trobe University Melbourne & Sydney" },
-    { text: "50+ peer-reviewed EIS and skin cancer diagnostics papers synthesised" },
-    { text: "7 national startup stage presentations across India" },
-    { text: "Co-Founder & COO, Livvolta Healthcare — prior medtech exit" }
+  const teamMembers = [
+    {
+      id: 1,
+      name: "Mohammed Yashik",
+      role: "Founder, CEO",
+      image: yashikImg,
+      linkedin: "https://www.linkedin.com/in/mohammed-yashik/",
+    },
+    {
+      id: 2,
+      name: "Anusha",
+      role: "Co-Founder, CTO",
+      image: anushaImg,
+      linkedin: "http://linkedin.com/in/k-anusha-bhavani",
+    },
   ];
 
   return (
-    <section className="founder-section">
-      <div className="founder-container">
-        <div className="sci-label">— THE FOUNDER</div>
-        <h1 className="founder-title">
-          Built by a biomedical engineer<br />
-          who has built this twice before.
-        </h1>
+    <div className="about-page">
+      <section className="leadership-section">
+        <div className="container">
+          <h2 className="section-title">Our Leadership Team</h2>
 
-        <div className="founder-content">
-          {/* Sidebar with Image */}
-          <div className="founder-sidebar">
-            <div className="image-frame">
-              <div className="frame-label">Mohammed Yashik Sahib</div>
-              <div className="frame-sub">Biomedical Engineer. Founder Of melaninBlind</div>
-              <img 
-                src={image} 
-                alt="Mohammed Yashik B" 
-                className="profile-img"
-              />
-            </div>
-          </div>
+          <div className="team-grid">
+            {teamMembers.map((member) => (
+              <div className="team-card" key={member.id}>
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="team-image"
+                />
 
-          {/* Bio and Stats */}
-          <div className="founder-main">
-            <h2 className="name">Mohammed Yashik B</h2>
-            <p className="role">Founder & CEO • Biomedical Engineer • Chennai, India</p>
-            
-            <blockquote className="quote">
-              "I have been building non-invasive skin cancer diagnostic tools since 2019. MelaninBlind is the third iteration — the one that gets the physics right, the economics right, and the equity right simultaneously."
-            </blockquote>
+                <h3>{member.name}</h3>
 
-            <div className="credentials-grid">
-              {credentials.map((item, index) => (
-                <div key={index} className="credential-item">
-                  <Check size={16} className="check-icon" />
-                  <span>{item.text}</span>
-                </div>
-              ))}
-            </div>
+                <p>{member.role}</p>
 
-            <div className="contact-footer">
-              <div className="contact-col">
-                <a href="mailto:mohammedyashik.b@gmail.com">mohammedyashik.b@melaninblind.com</a>
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bio-btn"
+                >
+                  View Bio
+                </a>
               </div>
-              <div className="contact-col">
-                <a href="https://linkedin.com/in/mohammed-yashik/">linkedin.com/in/mohammed-yashik/</a>
-                <p>melaninblind.com</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-
-        <div className="hiring-bar">
-          Currently seeking: <span>Head of Clinical Affairs</span> • <span>Head of Hardware Engineering</span> • <span>Head of Business Development</span>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
