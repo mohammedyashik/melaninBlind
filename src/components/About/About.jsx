@@ -2,7 +2,7 @@ import React from "react";
 import "./About.css";
 
 import yashikImg from "../../assets/yashik.png";
-import anushaImg from "../../assets/anusha.jpg.jpeg";
+import anushaImg from "../../assets/anusha.jpg";
 
 const About = () => {
   const teamMembers = [
